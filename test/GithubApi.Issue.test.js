@@ -21,9 +21,9 @@ describe('Obtain the logged user', () => {
       const response = await agent.get(usuario.repos_url)
         .set('User-Agent', 'agent')
         .auth('token', process.env.ACCESS_TOKEN);
-      const tamRepos = (response.body).length;
-      const escogencia = Math.floor(Math.random() * tamRepos);
-      randomRepository = (response.body)[escogencia];
+      // const tamRepos = (response.body).length;
+      // const escogencia = Math.floor(Math.random() * tamRepos);
+      randomRepository = (response.body)[0];
 
       expect(randomRepository).not.equal(undefined);
     });
